@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "@harness/ui/dist/index.css";
 import "./globals.css";
 import { AiAssistant } from "@/components/AiAssistant";
 
