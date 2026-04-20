@@ -4,6 +4,8 @@ import { Button } from "@harness/ui";
 import { Check, Plus } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function BundlePage() {
   const allSolutions = await db.select().from(solutions).where(solutions.bundleEligible);
 

@@ -2,6 +2,8 @@ import { db, leadSubmissions, solutions, pages } from "@harness/db";
 import { Sidebar } from "@/components/Sidebar";
 import { count } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+
 export default async function Dashboard() {
   const leadsCount = await db.select({ value: count() }).from(leadSubmissions);
   const solutionsCount = await db.select({ value: count() }).from(solutions);

@@ -4,6 +4,8 @@ import { Button } from "@harness/ui";
 import { revalidatePath } from "next/cache";
 import { eq } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+
 async function updateSettings(formData: FormData) {
   "use server";
 

@@ -4,6 +4,8 @@ import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
 import { SolutionGrid } from "@/components/SolutionGrid";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const settings = await db.select().from(siteSettings).limit(1);
   const allSolutions = await db.select().from(solutions);

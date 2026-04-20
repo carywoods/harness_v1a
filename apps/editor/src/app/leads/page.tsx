@@ -2,6 +2,8 @@ import { db, leadSubmissions } from "@harness/db";
 import { Sidebar } from "@/components/Sidebar";
 import { desc } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+
 export default async function LeadsPage() {
   const leads = await db.select().from(leadSubmissions).orderBy(desc(leadSubmissions.createdAt));
 

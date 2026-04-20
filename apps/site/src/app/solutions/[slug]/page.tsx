@@ -6,6 +6,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { eq } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+
 export default async function SolutionPage({ params }: { params: { slug: string } }) {
   const result = await db.select().from(solutions).where(eq(solutions.slug, params.slug)).limit(1);
   const solution = result[0];

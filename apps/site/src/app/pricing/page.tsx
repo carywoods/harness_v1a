@@ -4,6 +4,8 @@ import { Button } from "@harness/ui";
 import { Check } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function PricingPage() {
   const plans = await db.select().from(pricingPlans).orderBy(pricingPlans.sortOrder);
 
