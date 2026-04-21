@@ -5,6 +5,12 @@ import bcrypt from "bcryptjs";
 async function main() {
   console.log("Seeding database...");
 
+  // Check if already seeded
+  const existingUsers = await db.select().from(schema.users).limit(1);
+  if (existingUsers.length > 0) {
+    console.log("Database already contains data, skipping seed.");
+    return;
+  }
   // 1. Admin User
   const hashedPassword = await bcrypt.hash("admin123", 10);
   await db.insert(schema.users).values({
