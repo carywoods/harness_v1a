@@ -1,0 +1,29 @@
+{
+  "name": "@harness/db",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "tsx src/seed.ts",
+    "db:studio": "drizzle-kit studio",
+    "db:push": "drizzle-kit push",
+    "build": "echo 'No build needed for db'",
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "better-sqlite3": "11.9.1",
+    "drizzle-orm": "0.40.0",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.13",
+    "drizzle-kit": "0.30.4",
+    "tsx": "4.7.1",
+    "typescript": "5.3.3",
+    "@harness/shared-config": "workspace:*"
+  }
+}
