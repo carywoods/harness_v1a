@@ -11,15 +11,11 @@ const config: Config = {
       colors: {
         brand: {
           blue: '#007AFF', // System Blue
+          charcoal: '#121212', // Deep Charcoal
         },
-        neutral: {
-          800: '#2D3748', // deep charcoals
-          900: '#1A202C',
-        }
       },
-      fontFamily: {
-        sans: ['var(--font-geist-sans)'],
-        mono: ['var(--font-geist-mono)'],
+      letterSpacing: {
+        tighter: '-0.04em',
       },
     },
   },

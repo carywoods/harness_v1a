@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html, body {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #FFFFFF;
+    color: #121212;
   }
 }
 
-@layer components {
-  .card {
-    @apply border border-gray-200 dark:border-neutral-800 rounded-lg bg-white dark:bg-neutral-900;
+@layer utilities {
+  .border-minimal {
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
 }

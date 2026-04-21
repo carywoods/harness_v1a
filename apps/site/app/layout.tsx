@@ -7,7 +7,7 @@ import './globals.css';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="flex min-h-screen flex-col font-sans bg-white text-black dark:bg-black dark:text-white">
+      <body className="flex min-h-screen flex-col font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
