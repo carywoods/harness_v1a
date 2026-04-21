@@ -1,0 +1,32 @@
+services:
+  site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run start:site
+    ports:
+      - "3000:3000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DATABASE_URL=/data/sqlite.db
+    volumes:
+      - harness_data:/data
+    restart: always
+
+  editor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run start:editor
+    ports:
+      - "3001:3001"
+    environment:
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - DATABASE_URL=/data/sqlite.db
+    volumes:
+      - harness_data:/data
+    restart: always
+
+volumes:
+  harness_data:
