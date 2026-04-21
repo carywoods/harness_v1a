@@ -12,7 +12,9 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "db:generate": "turbo db:generate",
     "db:push": "turbo db:push",
-    "db:seed": "turbo db:seed"
+    "db:seed": "turbo db:seed",
+    "start:site": "npm run start -w site",
+    "start:editor": "npm run start -w editor"
   },
   "devDependencies": {
     "drizzle-kit": "^0.31.10",
