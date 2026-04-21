@@ -3,14 +3,16 @@ RUN apt-get update && apt-get install -y python3 make g++ sqlite3 libsqlite3-dev
 WORKDIR /app
 
 FROM base AS builder
+# Copy root package files
 COPY package*.json ./
+
+# Copy all package.json files from apps and packages
 COPY apps/site/package*.json ./apps/site/
 COPY apps/editor/package*.json ./apps/editor/
 COPY packages/ui/package*.json ./packages/ui/
 COPY packages/db/package*.json ./packages/db/
 COPY packages/ai/package*.json ./packages/ai/
 COPY packages/types/package*.json ./packages/types/
-COPY packages/config/package*.json ./packages/config/ || true
 
 RUN npm ci
 
