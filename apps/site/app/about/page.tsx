@@ -2,16 +2,16 @@ import { Metadata } from 'next';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'Harness AI | Home',
-    description: 'Harness AI placeholder for /',
+    title: 'Harness AI | /about',
+    description: 'Harness AI placeholder for /about',
   };
 }
 
 export default function Page() {
   return (
     <main>
-      <h1>/</h1>
-      <p>This is the / page for Harness AI.</p>
+      <h1>/about</h1>
+      <p>This is the /about page for Harness AI.</p>
     </main>
   );
 }
