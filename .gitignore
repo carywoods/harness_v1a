@@ -1,8 +1,0 @@
-node_modules
-.next
-.turbo
-.env
-*.db
-*.db-journal
-dist
-
