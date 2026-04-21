@@ -46,11 +46,12 @@ ENV DATABASE_URL=${DATABASE_URL}
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-COPY --from=builder /app/apps/site/public ./apps/site/public
-
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/apps/site/.next/standalone ./
+
+# Next.js standalone mode requires we manually copy public and static folders
+COPY --from=builder --chown=nextjs:nodejs /app/apps/site/public ./apps/site/public
 COPY --from=builder --chown=nextjs:nodejs /app/apps/site/.next/static ./apps/site/.next/static
 
 USER nextjs
@@ -59,4 +60,6 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["node", "apps/site/server.js"]
+WORKDIR /app/apps/site
+
+CMD ["node", "server.js"]
