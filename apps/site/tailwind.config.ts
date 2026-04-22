@@ -17,6 +17,10 @@ const config: Config = {
       letterSpacing: {
         tighter: '-0.04em',
       },
+      fontFamily: {
+        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)'],
+      },
     },
   },
   plugins: [],
